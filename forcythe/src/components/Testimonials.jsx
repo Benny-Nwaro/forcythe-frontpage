@@ -88,13 +88,13 @@ const Testimonials = () => {
     },
     {
       name: "Iwaria",
-      imgSrc: "/images/iwaria.svg",
+      imgSrc: "https://iwaria.com/wp-content/themes/iwaria-prime/images/logo-white.png",
       alt: "Iwaria",
       extraClasses: "",
     },
     {
       name: "Beaupreneur",
-      imgSrc: "/images/Beaupreneur.svg",
+      imgSrc: "https://www.beaupreauenmauges.fr/templates/images/logo-Beaupreau-en-Mauges.png",
       alt: "Beaupreneur",
       extraClasses: "",
     },

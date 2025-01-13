@@ -30,7 +30,11 @@ const Brands = ({ brandsData, onBrandClick, className }) => {
                 decoding="async"
                 className={`w-full ${
                   brand.name === "Starks" ? `w-20 h-14 text-white rounded-full` : ""
-                }`}
+                } ${
+                  brand.name === "Iwaria" ? `w-30 h-14 text-white rounded-full` : ""
+                }  ${
+                  brand.name === "Beaupreneur" ? `w-44 h-14 text-white rounded-full` : ""
+                }` }
                 src={brand.imgSrc}
               />
               {brand.name === "Starks" && <span>{brand.name}</span>}

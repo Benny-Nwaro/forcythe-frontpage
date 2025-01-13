@@ -11,6 +11,7 @@ import Testimonials from '../components/Testimonials'
 import Section from '../components/Section'
 import Statistics from '../components/Statistics'
 import ReadyToScale from '../components/ReadyToScale'
+import Carousel from '../components/Carousel'
 
 function HomePage() {
   return (
@@ -30,7 +31,8 @@ function HomePage() {
           <SkillsCarousel/>
         </div>
         <div className='z-50 mt-20'>
-          <SkillsCarouselReverse/>
+          <Carousel/>
+          {/* <SkillsCarouselReverse/> */}
         </div>
         <div className='mt-20 max-md:pb-64'>
         <Testimonials/>

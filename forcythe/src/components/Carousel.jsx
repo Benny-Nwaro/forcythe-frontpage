@@ -2,7 +2,7 @@ import React from 'react';
 import Marquee from 'react-fast-marquee';
 
 
-function SkillsCarouselReverse() {
+function Carousel() {
     const projects = [
         { src: "https://images.unsplash.com/photo-1736439170342-442627c6baea?q=80&w=2675&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "project-image-0" },
         { src: "https://images.unsplash.com/photo-1735798036875-313e94b7a281?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDZ8aG1lbnZRaFVteE18fGVufDB8fHx8fA%3D%3D", alt: "project-image-1" },
@@ -37,4 +37,4 @@ function SkillsCarouselReverse() {
   );
 }
 
-export default SkillsCarouselReverse;
+export default Carousel;

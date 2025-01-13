@@ -26,10 +26,10 @@ function HomePage() {
               <span className='text-white capitalize text-7xl max-md:text-4xl'>clients’ </span>
               <span className='text-white capitalize text-7xl max-md:text-4xl'>journey </span>
         </div>
-        <div className='shadow-2xl shadow-gray-700 mb-10 '>
+        <div className=' mb-10 '>
           <SkillsCarousel/>
         </div>
-        <div className='shadow-2xl shadow-gray-700 z-50 mt-20'>
+        <div className='z-50 mt-20'>
           <SkillsCarouselReverse/>
         </div>
         <div className='mt-20 max-md:pb-64'>

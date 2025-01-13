@@ -6,6 +6,11 @@ import FooterSection from '../components/FooterSection'
 import SkillsCarouselReverse from '../components/SkillsCarouselReverse'
 import Features from '../components/Features'
 import Blogs from '../components/Blogs'
+import Brands from '../components/Brands'
+import Testimonials from '../components/Testimonials'
+import Section from '../components/Section'
+import Statistics from '../components/Statistics'
+import ReadyToScale from '../components/ReadyToScale'
 
 function HomePage() {
   return (
@@ -21,12 +26,30 @@ function HomePage() {
               <span className='text-white capitalize text-7xl max-md:text-4xl'>clients’ </span>
               <span className='text-white capitalize text-7xl max-md:text-4xl'>journey </span>
         </div>
-        <div className='shadow-2xl shadow-gray-700 '>
+        <div className='shadow-2xl shadow-gray-700 mb-10 '>
           <SkillsCarousel/>
         </div>
-        {/* <Blogs/> */}
-        {/* <Features/> */}
-        {/* <SkillsCarouselReverse/> */}
+        {/* <div className='shadow-2xl shadow-gray-700 mb-10 '>
+          <SkillsCarouselReverse/>
+        </div> */}
+        <div className='mt-20'>
+        <Testimonials/>
+        </div>
+        <div className='mt-20'>
+        <Section/>
+        </div>
+        <div className='mt-20'>
+        <Features/>
+        </div>
+        <div className='mt-20'>
+        <Statistics/>
+        </div>
+        <div className='mt-20'>
+        <Blogs/>
+        </div>
+        <div className='mt-20'>
+        <ReadyToScale/>
+        </div>
         <FooterSection/>
     </div>
   )

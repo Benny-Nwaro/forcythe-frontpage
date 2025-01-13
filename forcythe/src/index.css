@@ -4,3 +4,27 @@
 @tailwind utilities;
 
 
+@keyframes moving-blur {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(15px) translateY(-15px);
+    }
+    50% {
+      transform: translateX(-15px) translateY(15px);
+    }
+    75% {
+      transform: translateX(15px) translateY(15px);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+  
+  .animate-moving-blur {
+    animation: moving-blur 4s infinite linear;
+    filter: blur(2px); 
+    opacity: 0.8; /* Make the blur more visible */
+  }
+  

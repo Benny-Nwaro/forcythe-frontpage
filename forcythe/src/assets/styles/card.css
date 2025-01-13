@@ -2,39 +2,24 @@
     --card-height: 65vh;
     --card-width: calc(var(--card-height) / 1.5);
   }
-  
-  /* body {
-    min-height: 100vh;
-    background: #212534;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
-  } */
-  h1 {
-    color: white;
-    font-family: "Titan One", cursive;
-    margin-bottom: 20px;
-  }
+
+
   .card {
-    background: url("../images/card.jpg");
     background-size: cover;
-    padding-bottom: 4px;
     background-position: center;
+    padding-top: 1px;
+    padding-bottom: 1px;
     background-repeat: no-repeat;
     width: var(--card-width);
-    height: 300px;
+    height: 450px;
     position: relative;
-    border-radius: 6px;
+    border-radius: 50px;
     justify-content: center;
     align-items: center;
     text-align: center;
     display: flex;
     font-size: 1.5em;
     color: rgb(88 199 250 / 0%);
-    font-family: "Gloria Hallelujah", cursive;
   }
   
   .card:hover {
@@ -52,7 +37,7 @@
     content: "";
     width: 102%;
     height: 100%;
-    border-radius: 8px;
+    border-radius: 18px;
     background-image: linear-gradient(
       var(--rotate),
       #f7f7f7,
@@ -97,16 +82,5 @@
     }
   }
   
-  a {
-    color: #212534;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-weight: bold;
-    margin-top: 2rem;
-  }
+ 
   
-  .user {
-    color: white;
-    font-size: 24px;
-    font-family: "Titan One", cursive;
-  }

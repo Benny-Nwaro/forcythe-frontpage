@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       animation: {
-        'spin-slow': 'spin 2.5s linear infinite',
+        "spin-slow": "spin 8s linear infinite", // Slows down spinning
       },
       keyframes: {
         "spin-gradient": {

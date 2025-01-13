@@ -2,75 +2,84 @@ import React, { useEffect, useRef } from "react";
 
 const SkillsCarousel = () => {
   const projects = [
-    { src: "https://images.unsplash.com/photo-1736439170342-442627c6baea?q=80&w=2675&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "project-image-0" },
-    { src: "https://images.unsplash.com/photo-1735798036875-313e94b7a281?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDZ8aG1lbnZRaFVteE18fGVufDB8fHx8fA%3D%3D", alt: "project-image-1" },
-    { src: "https://images.unsplash.com/photo-1735488883510-df8a5c83a8fd?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMzfGhtZW52UWhVbXhNfHxlbnwwfHx8fHw%3D", alt: "project-image-2" },
-    { src: "https://images.unsplash.com/photo-1736083821029-665b513718f9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE0fEZ6bzN6dU9ITjZ3fHxlbnwwfHx8fHw%3D", alt: "project-image-3" },
-    { src: "https://plus.unsplash.com/premium_photo-1727342635651-6695593ee0d6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI5fEZ6bzN6dU9ITjZ3fHxlbnwwfHx8fHw%3D", alt: "project-image-4" },
-    { src: "https://plus.unsplash.com/premium_photo-1734607187626-030b7c9de592?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQzfEZ6bzN6dU9ITjZ3fHxlbnwwfHx8fHw%3D", alt: "project-image-5" },
+    { src: "/images/Project Images/stac.svg", alt: "project-image-0" },
+    { src: "/images/Project Images/activity.svg", alt: "project-image-1" },
+    { src: "/images/Project Images/africaFund.svg", alt: "project-image-2" },
+    { src: "/images/Project Images/starks.svg", alt: "project-image-3" },
+    { src: "/images/Project Images/exec-pro.svg", alt: "project-image-4" },
+    { src: "/images/Project Images/phone.svg", alt: "project-image-5" },
   ];
 
-  const scrollContainerRef = useRef(null);
+  const forwardRef = useRef(null);
+  const reverseRef = useRef(null);
 
   useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-
-    const startScrolling = () => {
-      if (scrollContainer) {
-        scrollContainer.scrollLeft += 1;
-        if (
-          scrollContainer.scrollLeft >=
-          scrollContainer.scrollWidth - scrollContainer.offsetWidth
-        ) {
-          scrollContainer.scrollLeft = 0;
+    const scrollCarousel = (ref, direction) => {
+      if (ref.current) {
+        ref.current.scrollLeft += direction; // Adjust scroll direction
+        // Reset the scroll position when reaching the end or start
+        if (direction > 0 && ref.current.scrollLeft >= ref.current.scrollWidth / 2) {
+          ref.current.scrollLeft = 0;
+        } else if (direction < 0 && ref.current.scrollLeft <= 0) {
+          ref.current.scrollLeft = ref.current.scrollWidth / 2;
         }
       }
     };
 
-    const interval = setInterval(startScrolling, 5); // Adjust speed with this interval
+    const forwardInterval = setInterval(() => scrollCarousel(forwardRef, 2), 20); // Forward scroll
+    const reverseInterval = setInterval(() => scrollCarousel(reverseRef, -2), 20); // Reverse scroll
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => {
+      clearInterval(forwardInterval);
+      clearInterval(reverseInterval);
+    };
   }, []);
 
   return (
-    <div className="w-full overflow-hidden">
+    <div
+      className="flex flex-col gap-5 bg-gradient-to-t from-[#030516] via-transparent to-[#030516] py-8"
+    >
+      {/* Forward Scrolling Carousel */}
       <div
-        ref={scrollContainerRef}
-        className="flex gap-10 items-center w-full h-[500px] overflow-x-scroll scroll-smooth shadow-2xl shadow-black"
-        style={{
-          whiteSpace: "nowrap",
-          scrollbarWidth: "none", // Firefox
-          msOverflowStyle: "none", // IE and Edge
-        }}
+        ref={forwardRef}
+        className="flex items-center gap-5 overflow-hidden whitespace-nowrap scroll-smooth"
       >
-        {/* Hide scrollbar for WebKit-based browsers */}
-        <style>
-          {`
-            div::-webkit-scrollbar {
-              display: none;
-            }
-          `}
-        </style>
         {projects.concat(projects).map((project, index) => (
           <div
-            key={index}
-            className="relative w-[500px] h-[500px] bg-slate-900 bg-opacity-20 rounded-lg flex-shrink-0"
+            key={`forward-${index}`}
+            className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] flex-shrink-0"
           >
-            {/* Animated Background */}
-            <div className="bg-accent -z-10 w-full h-full bg-gray-800 absolute top-0 left-0 bg-opacity-10 animate-pulse"></div>
-
-            {/* Project Image */}
+            <div className="bg-accent -z-10 w-full h-full absolute top-0 left-0 bg-opacity-10 animate-pulse"></div>
             <img
-              alt={project.alt}
-              loading="lazy"
-              decoding="async"
-              className="w-full h-full px-8 pt-8  object-cover"
               src={project.src}
+              alt={project.alt}
+              className="w-full h-full object-contain"
+              loading="lazy"
             />
           </div>
         ))}
       </div>
 
+      {/* Reverse Scrolling Carousel */}
+      <div
+        ref={reverseRef}
+        className="flex items-center gap-5 overflow-hidden whitespace-nowrap scroll-smooth"
+      >
+        {projects.concat(projects).map((project, index) => (
+          <div
+            key={`reverse-${index}`}
+            className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] flex-shrink-0"
+          >
+            <div className="bg-accent -z-10 w-full h-full absolute top-0 left-0 bg-opacity-10 animate-pulse"></div>
+            <img
+              src={project.src}
+              alt={project.alt}
+              className="w-full h-full object-contain"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

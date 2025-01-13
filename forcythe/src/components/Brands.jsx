@@ -1,62 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Brands = () => {
-  const brands = [
-    {
-      name: "Starks",
-      imgSrc: "/images/starks.svg",
-      alt: "Starks Associate",
-      extraClasses: "rounded-s-full",
-    },
-    {
-      name: "ExecutivePros",
-      imgSrc: "/images/ExecutivePros Logo.svg",
-      alt: "ExecutivePros",
-      extraClasses: "",
-    },
-    {
-      name: "Stac AI",
-      imgSrc: "/images/stacai.svg",
-      alt: "Stac AI",
-      extraClasses: "",
-    },
-    {
-      name: "Iwaria",
-      imgSrc: "/images/iwaria.svg",
-      alt: "Iwaria",
-      extraClasses: "",
-    },
-    {
-      name: "Beaupreneur",
-      imgSrc: "/images/Beaupreneur.svg",
-      alt: "Beaupreneur",
-      extraClasses: "rounded-e-full bg-accent3",
-    },
-  ];
+const Brands = ({ brandsData, onBrandClick, className }) => {
+  const [activeBrand, setActiveBrand] = useState(null);
+
+  const handleBrandClick = (brandName) => {
+    setActiveBrand(brandName);
+    if (onBrandClick) {
+      onBrandClick(brandName);
+    }
+  };
 
   return (
-    <div className="w-full overflow-x-scroll hide-scrollbar">
-      <div className="w-full border-[1px] border-[#06438C] rounded-full grid grid-cols-5 min-w-[750px]">
-        {brands.map((brand, index) => (
-          <div
+    <div className={`w-full overflow-x-scroll hide-scrollbar ${className || ""}`}>
+      <div className="w-full border-[2px] border-[#06438C] rounded-full grid grid-cols-5 min-w-[750px]">
+        {brandsData?.map((brand, index) => (
+          <button
             key={index}
-            className={`w-full p-[1.1rem] cursor-pointer transition-all duration-300 ${brand.extraClasses}`}
+            onClick={() => handleBrandClick(brand.name)}
+            className={`w-full p-2 cursor-pointer transition-all duration-300 ${
+              brand.extraClasses
+            } ${activeBrand === brand.name ? "bg-blue-950 text-white" : ""}`}
           >
-            <div className="w-fit h-full col mx-auto gap-1.5 text-white text-[17px] font-medium min-w-fit flex items-center justify-center">
+            <div className="w-fit h-14 mx-auto gap-1.5 text-white text-[17px] font-medium min-w-fit flex items-center justify-center">
               <img
                 alt={brand.alt}
                 loading="lazy"
                 width="20"
                 height="20"
                 decoding="async"
-                className={`w-full ${brand.name === "Iwaria" ? "w-20" : ""} ${
-                  brand.name === "Beaupreneur" ? "w-36" : ""
+                className={`w-full ${
+                  brand.name === "Starks" ? `w-20 h-14 text-white rounded-full` : ""
                 }`}
                 src={brand.imgSrc}
               />
-              {brand.name && <span>{brand.name}</span>}
+              {brand.name === "Starks" && <span>{brand.name}</span>}
             </div>
-          </div>
+          </button>
         ))}
       </div>
     </div>

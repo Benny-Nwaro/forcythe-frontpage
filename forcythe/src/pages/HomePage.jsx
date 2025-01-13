@@ -6,12 +6,10 @@ import FooterSection from '../components/FooterSection'
 import SkillsCarouselReverse from '../components/SkillsCarouselReverse'
 import Features from '../components/Features'
 import Blogs from '../components/Blogs'
-import Brands from '../components/Brands'
 import Testimonials from '../components/Testimonials'
 import Section from '../components/Section'
 import Statistics from '../components/Statistics'
 import ReadyToScale from '../components/ReadyToScale'
-import Carousel from '../components/Carousel'
 
 function HomePage() {
   return (
@@ -27,12 +25,9 @@ function HomePage() {
               <span className='text-white capitalize text-7xl max-md:text-4xl'>clients’ </span>
               <span className='text-white capitalize text-7xl max-md:text-4xl'>journey </span>
         </div>
-        <div className=' mb-10 '>
+        <div className=' flex flex-col space-y-10  '>
           <SkillsCarousel/>
-        </div>
-        <div className='z-50 mt-20'>
-          <Carousel/>
-          {/* <SkillsCarouselReverse/> */}
+          <SkillsCarouselReverse/>
         </div>
         <div className='mt-20 max-md:pb-64'>
         <Testimonials/>

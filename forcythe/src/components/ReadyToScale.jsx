@@ -5,7 +5,7 @@ const ReadyToScale = () => {
   return (
     <div className="mx-32 max-md:mx-4 py-10 text-center">
       <div className="max-w-[45rem] mx-auto">
-        <h2 className="text-[4rem] text-white leading-[2.5rem] sm:text-[2.2rem] sm:leading-[2.5rem] lg:text-[3rem] lg:leading-[3rem] mb-6">
+        <h2 className="text-[4rem] max-md:text-[2rem] text-white leading-[2.5rem] sm:text-[2.2rem] sm:leading-[2.5rem] lg:text-[3rem] lg:leading-[3rem] mb-6">
           <span className="text-blue-500">Ready to Scale?</span>
           <br /> Join successful brands that chose us as their
           <span className="text-blue-500"> growth accelerator</span>

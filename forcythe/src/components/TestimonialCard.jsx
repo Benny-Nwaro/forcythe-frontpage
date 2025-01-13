@@ -12,10 +12,10 @@ const TestimonialCard = ({ testimonial }) => {
 
   return (
     <div
-       className={`mt-2 h-96 max-md:w-[100%] lg:w-[35%] rounded-[1.8rem] flex flex-col sm:flex-row p-5 sm:p-7 bg-accent3 lg:relative max-md:px-4 text-white transition-all duration-700 ${
+       className={`mt-2 h-96 max-md:w-[100%] bg-customBlue lg:w-[35%] rounded-[1.8rem] flex flex-col max-md:h-[550px] sm:flex-row p-5 sm:p-7 bg-accent3 lg:relative max-md:px-4 max-md:pb-96 text-white transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
-      style={{ left: "10%", backgroundColor:"#1f3449" }}
+      style={{ left: "10%", }}
     >
       {/* Text Content Section */}
       <div className="sm:basis-[58%] pr-3">
@@ -57,8 +57,9 @@ const TestimonialCard = ({ testimonial }) => {
           isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
         }`}
       >
-        <div className="bg-accent z-0 w-full h-full absolute top-0 left-0 bg-opacity-10 animate-pulse rounded-xl"></div>
-        <img
+        <div className="bg-accent z-0 w-full h-full  absolute top-0 left-0 bg-opacity-10 animate-pulse rounded-xl"></div>
+      <div className="max-md:h-72">
+      <img
           alt={author}
           loading="lazy"
           decoding="async"
@@ -73,6 +74,7 @@ const TestimonialCard = ({ testimonial }) => {
             color: "transparent",
           }}
         />
+      </div>
       </div>
     </div>
   );

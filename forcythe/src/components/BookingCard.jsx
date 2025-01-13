@@ -40,7 +40,7 @@ function BookingCard() {
   }, []);
 
   return (
-    <div className="w-full lg:h-[500px] bg-white lg:mx-32 max-md:mx-4 max-sm:mx-2 bg-opacity-10 p-10 rounded-[4rem] max-md:rounded-[2rem]">
+    <div className="flex flex-col w-full lg:h-[500px] bg-white lg:mx-32 max-md:mx-4 max-sm:mx-2 bg-opacity-10 p-10 rounded-[4rem] max-md:rounded-[2rem]">
       <div className="min-h-[180px]">
         <h1 className="max-md:text-[2rem] text-white lg:text-6xl font-medium leading-[1] mb-7">
           {headingText.split("products").map((part, index) => (

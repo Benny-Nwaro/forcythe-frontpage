@@ -24,16 +24,14 @@ const Navbar = () => {
       <div className="flex items-center gap-20">
         {/* Logo */}
         <a href="/">
-        <div className="border-2 border-white rounded-lg">
         <img
             alt="Forcythe logo"
             width="150"
             height="20"
             decoding="async"
-            className="w-28 sm:w-32 md:w-auto border-2 border-double border-blue-600 rounded-lg"
+            className="w-28 sm:w-32 md:w-auto rounded-lg"
             src={logo}
           />
-        </div>
         </a>
         {/* Navigation Links */}
         <div className="hidden md:flex text-lg items-center gap-4 text-white">

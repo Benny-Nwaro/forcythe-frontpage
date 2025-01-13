@@ -72,7 +72,7 @@ const Testimonials = () => {
       imgSrc:
         "https://media.licdn.com/dms/image/v2/C4D0BAQEIz4Motf7EMA/company-logo_200_200/company-logo_200_200/0/1643367870874?e=2147483647&v=beta&t=oXdwILAwSMjZGGyTo6i9n6kdvwEHp9-JH4eYPzmWWF0",
       alt: "Starks Associate",
-      extraClasses: "rounded-s-full",
+      extraClasses: "",
     },
     {
       name: "ExecutivePros",
@@ -96,14 +96,12 @@ const Testimonials = () => {
       name: "Beaupreneur",
       imgSrc: "/images/Beaupreneur.svg",
       alt: "Beaupreneur",
-      extraClasses: "rounded-e-full bg-accent3",
+      extraClasses: "",
     },
   ];
 
   return (
     <div className="flex flex-col">
-      <div className="">
-      <div className="">
         <p className="text-[2rem] leading-[2.5rem] sm:text-[2.2rem] text-white sm:leading-[2.5rem] lg:text-[3rem] lg:leading-[3.5rem] mb-12 max-w-4xl mx-auto text-center">
           <div>
             <span className="opacity-0" style={{ opacity: 1 }}>
@@ -150,8 +148,6 @@ const Testimonials = () => {
             </span>
           </div>
         </p>
-      </div>
-    </div>
       {/* Brands Component */}
       <div>
         <Brands
@@ -167,7 +163,7 @@ const Testimonials = () => {
           <div key={index} className="w-full">
             {/* If the current brand is selected, display the corresponding testimonial */}
             {selectedBrand === brand.name && (
-              <div className="mt-2 max-md:px-4">
+              <div className="mt-2 w-full max-md:px-4">
                 <TestimonialCard
                   testimonial={
                     testimonials.find((test) => test.brand === brand.name) || {}

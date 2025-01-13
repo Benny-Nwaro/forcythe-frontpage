@@ -8,22 +8,26 @@ const Section = () => {
     {
       name: 'Idea',
       imageSrc: 'https://cdn-icons-png.flaticon.com/256/10134/10134814.png',
-      description: 'Nurture your idea into a blueprint for success.',
+      heading:"Your vision is unique.",
+      description: 'Nurture Your Idea into a Blueprint for Success with our strategic insights and industry expertise. Your vision is unique, let’s us shape it.',
     },
     {
       name: 'Design',
       imageSrc: 'https://cdn-icons-png.flaticon.com/256/11355/11355571.png',
-      description: 'Transform your idea into a visual masterpiece.',
+      heading:"Crafting the blueprint for success",
+      description: 'Nurture Your Idea into a Blueprint for Success with our strategic insights and industry expertise. Your vision is unique, let’s us shape it.',
     },
     {
       name: 'Develop',
       imageSrc: 'https://cdn-icons-png.flaticon.com/256/9394/9394519.png',
-      description: 'Bring your vision to life with cutting-edge development.',
+      heading:"Turning blueprints into reality.",
+      description: 'We breathe life into designs, building robust platforms ready to disrupt markets. Harness the experience of our development team to bring your Concept to Life.',
     },
     {
       name: 'Launch',
       imageSrc: 'https://cdn-icons-png.flaticon.com/256/6596/6596459.png',
-      description: 'Launch your project and watch it grow.',
+      heading:"Your launchpad to the market.",
+      description: 'We breathe life into designs, building robust platforms ready to disrupt markets. Harness the experience of our development team to bring your Concept to Life.',
     },
   ];
 
@@ -34,25 +38,25 @@ const Section = () => {
   const activeTabDetails = tabDetails.find((tab) => tab.name === activeTab);
 
   return (
-    <div className="section-padding py-20 lg:mx-32">
-      <div className="mb-12 xl:mb-0 max-w-[45rem]">
-        <p className="text-[2rem] leading-[2.5rem] sm:text-[2.2rem] text-white sm:leading-[2.5rem] lg:text-[2.5rem] lg:leading-[3rem]">
+    <div className="py-20 lg:mx-32 max-md:px-4">
+      <div className="mb-12 max-w-[50rem]">
+        <p className="text-[2rem] leading-[32px] sm:text-[2.2rem] text-white sm:leading-[2.5rem] lg:text-[3rem] lg:leading-[3rem]">
           From{' '}
           <span className="text-[#60a6e7] capitalize">Spark</span> to{' '}
           <span className="text-[#60a6e7] capitalize">Spotlight</span>: we take you every step of the way to success.
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-between">
+      <div className="flex flex-col mt-10 md:flex-row items-center justify-between">
         {/* Tabs Section */}
-        <div className="flex flex-col md:flex-row basis-1/2 mb-8 md:mb-0">
-          <div className="md:pr-10">
-            <div className="border-2 border-accent2 mb-12 rounded-full grid gap-1 grid-cols-4 p-3.5">
+        <div className="flex flex-col w-96 md:flex-row basis-1/2 mb-8 md:mb-0">
+          <div className="w-full">
+            <div className="w-full border-2 border-light-blue mb-12 rounded-full grid gap-1 grid-cols-4 p-4">
               {tabDetails.map((tab) => (
                 <div
                   key={tab.name}
-                  className={`overflow-hidden px-2 md:px-2.5 py-3 md:py-3.5 rounded-full text-center text-base font-medium cursor-pointer transition-all duration-300 w-24 ${
-                    activeTab === tab.name ? 'bg-blue-600 text-white' : 'bg-transparent text-white'
+                  className={`overflow-hidden  md:px-2.5 md:py-3.5 rounded-full text-center text-xl py-4 px-4 font-medium cursor-pointer transition-all duration-300 w-24 ${
+                    activeTab === tab.name ? 'bg-light-blue text-black w-32 max-md:w-24  ' : 'bg-transparent text-white'
                   }`}
                   onClick={() => handleTabClick(tab.name)}
                 >
@@ -61,11 +65,11 @@ const Section = () => {
               ))}
             </div>
 
-            <p className="text-[1.8rem] sm:text-[2rem] font-[500] text-white leading-8 sm:leading-8 mb-12">
-              Your vision is unique.
+            <p className="text-[3rem] sm:text-[2rem] font-[500] text-white leading-8 max-md:text-3xl sm:leading-8 mb-12">
+            {activeTabDetails.heading}
             </p>
 
-            <p className="text-white text-base md:text-lg mb-8 leading-7">
+            <p className="text-gray-500 text-2xl mb-8 leading-7">
               {activeTabDetails.description}
             </p>
 

@@ -19,7 +19,7 @@ const Brands = ({ brandsData, onBrandClick, className }) => {
             onClick={() => handleBrandClick(brand.name)}
             className={`w-full p-2 cursor-pointer transition-all duration-300 ${
               brand.extraClasses
-            } ${activeBrand === brand.name ? "bg-blue-950 text-white" : ""}`}
+            } ${activeBrand === brand.name ? " bg-customBlue rounded-full text-white" : ""}`}
           >
             <div className="w-fit h-14 mx-auto gap-1.5 text-white text-[17px] font-medium min-w-fit flex items-center justify-center">
               <img

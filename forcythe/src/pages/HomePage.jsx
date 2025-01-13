@@ -35,7 +35,7 @@ function HomePage() {
         <div className='mt-20'>
         <Testimonials/>
         </div>
-        <div className='mt-20'>
+        <div className=''>
         <Section/>
         </div>
         <div className='mt-20'>

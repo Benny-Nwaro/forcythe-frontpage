@@ -12,10 +12,10 @@ const TestimonialCard = ({ testimonial }) => {
 
   return (
     <div
-       className={`mt-2 h-96 max-md:w-[100%] lg:w-[35%] rounded-[1.8rem] flex flex-col sm:flex-row p-5 sm:p-7 bg-accent3 lg:relative max-md:px-4 text-white transition-all duration-700 ${
+       className={`mt-2 h-96 max-md:w-[100%] bg-customBlue lg:w-[35%] rounded-[1.8rem] flex flex-col sm:flex-row p-5 sm:p-7 bg-accent3 lg:relative max-md:px-4 text-white transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
-      style={{ left: "10%", backgroundColor:"#1f3449" }}
+      style={{ left: "10%", }}
     >
       {/* Text Content Section */}
       <div className="sm:basis-[58%] pr-3">

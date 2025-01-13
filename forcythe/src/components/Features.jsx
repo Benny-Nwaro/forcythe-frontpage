@@ -32,9 +32,9 @@ const Features = () => {
   ];
 
   return (
-    <div className="py-14 mx-32 max-md:mx-4">
+    <div className="py-14 mx-32 max-md:mx-5">
       <div className="text-center text-white mb-10">
-        <p className="text-2xl text-white sm:text-3xl lg:text-4xl leading-tight">
+        <p className="text-2xl text-light-blue max-md:text-4xl lg:text-4xl leading-tight">
           Your best call for <span className="capitalize">B2B/B2C</span> product innovation
         </p>
       </div>
@@ -45,7 +45,7 @@ const Features = () => {
             className="card relative w-full max-md:mb-10  flex flex-col  items-center  rounded-2xl transition-transform  duration-500 hover:scale-105"
           >
             <div className=" relative z-10 bg-black w-full h-full hover:border-2 hover:border-blue-500 max-md:p-5 sm:p-10 rounded-2xl hover:shadow-lg">
-              <div className="w-fit p-2 bg-[#60A6E7] bg-opacity-60 rounded-2xl mb-5">
+              <div className="w-fit p-2 bg-light-blue bg-opacity-60 rounded-2xl mb-5">
               <TbStack2  className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-4xl text-left text-white font-medium mb-5">{feature.title}</h4>

@@ -15,6 +15,11 @@ export default {
           "100%": { transform: "rotate(360deg)" },
         },
       },
+      colors: {
+        'light-blue': 'rgb(179, 208, 242)', // This is the base color
+         "customBlue": '#1f3449', // Add your custom color here
+
+      },
     },
   },
   plugins: [],

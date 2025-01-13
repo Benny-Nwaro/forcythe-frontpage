@@ -6,7 +6,7 @@ function BookingCard() {
   const [paragraphText, setParagraphText] = useState("");
   const fullHeadingText = "We build products that shape a better future";
   const fullParagraphText =
-    "We’re the architects of digital excellence across industries. We redefine business with cutting-edge digital strategies that invoke sector-wide transformation.";
+    "0We’re the architects of digital excellence across industries. We redefine business with cutting-edge digital strategies that invoke sector-wide transformation.";
 
   useEffect(() => {
     let headingIndex = 0;
@@ -44,12 +44,12 @@ function BookingCard() {
       <div className="min-h-[180px]">
         <h1 className="max-md:text-[2rem] text-white lg:text-8xl font-medium leading-[1] mb-7">
           {headingText.split("products").map((part, index) => (
-            <React.Fragment key={index}>
+            <div className="animate-typing" key={index}>
               {part}
               {index === 0 && headingText.includes("products") && (
                 <span className="text-accent text-blue-500">products</span>
               )}
-            </React.Fragment>
+            </div>
           ))}
         </h1>
       </div>

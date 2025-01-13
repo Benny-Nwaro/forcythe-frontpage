@@ -20,7 +20,7 @@ function SkillsCarouselReverse() {
             className="relative w-[500px] h-[500px] bg-slate-900 bg-opacity-20 rounded-lg flex-shrink-0"
           >
             {/* Animated Background */}
-            <div className="bg-accent -z-10 w-full h-full bg-gray-800 absolute top-0 left-0 bg-opacity-10 animate-pulse"></div>
+            <div className="bg-accent z-50 w-full h-full bg-black absolute top-0 left-0 blur-2xl bg-opacity-70 mt-24 "></div>
 
             {/* Project Image */}
             <img

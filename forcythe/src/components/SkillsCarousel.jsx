@@ -17,19 +17,23 @@ const SkillsCarousel = () => {
 
     const startScrolling = () => {
       if (scrollContainer) {
-        scrollContainer.scrollLeft += 1;
-        if (
-          scrollContainer.scrollLeft >=
-          scrollContainer.scrollWidth - scrollContainer.offsetWidth
-        ) {
-          scrollContainer.scrollLeft = 0;
+        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth; // Calculate max scroll distance
+        const currentScroll = scrollContainer.scrollLeft;
+
+        // Circular Scrolling 
+        if (currentScroll >= maxScroll) { 
+          scrollContainer.scrollLeft = 0; 
+        } else {
+          scrollContainer.scrollLeft += 3; // Scroll speed, adjust for faster/slower
         }
+
+        requestAnimationFrame(startScrolling); // Continuously scroll
       }
     };
 
-    const interval = setInterval(startScrolling, 3); // Adjust speed with this interval
+    startScrolling(); // Start the scrolling loop
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => cancelAnimationFrame(startScrolling); // Clean up when unmounted
   }, []);
 
   return (
@@ -51,26 +55,26 @@ const SkillsCarousel = () => {
             }
           `}
         </style>
-        {projects.concat(projects).map((project, index) => (
+
+        {projects.map((project, index) => (
           <div
             key={index}
             className="relative w-[500px] h-[500px] bg-slate-900 bg-opacity-20 rounded-lg flex-shrink-0"
           >
             {/* Animated Background */}
-            <div className="-z-10 w-full h-full absolute top-0 left-0 bg-opacity-10 animate-pulse"></div>
+            <div className="bg-accent -z-10 w-full h-full bg-gray-800 absolute top-0 left-0 bg-opacity-10 animate-pulse"></div>
 
             {/* Project Image */}
             <img
               alt={project.alt}
               loading="lazy"
               decoding="async"
-              className="w-full h-full px-8 pt-8  object-cover"
+              className="w-full h-full px-8 pt-8 object-cover"
               src={project.src}
             />
           </div>
         ))}
       </div>
-
     </div>
   );
 };

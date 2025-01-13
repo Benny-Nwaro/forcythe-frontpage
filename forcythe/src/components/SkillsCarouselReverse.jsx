@@ -17,23 +17,30 @@ const SkillsCarouselReverse = () => {
 
     const startScrolling = () => {
       if (scrollContainer) {
-        scrollContainer.scrollLeft -= 5; // Reverse scrolling speed
-        if (scrollContainer.scrollLeft <= 0) {
-          scrollContainer.scrollLeft = scrollContainer.scrollWidth / 2; // Reset seamlessly to the end
+        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth; // Calculate max scroll distance
+        const currentScroll = scrollContainer.scrollLeft;
+
+        // Circular Scrolling 
+        if (currentScroll >= maxScroll) { 
+          scrollContainer.scrollLeft = 0; 
+        } else {
+          scrollContainer.scrollLeft += 3; // Scroll speed, adjust for faster/slower
         }
+
+        requestAnimationFrame(startScrolling); // Continuously scroll
       }
     };
 
-    const interval = setInterval(startScrolling, 5); // Faster interval for quicker updates
+    startScrolling(); // Start the scrolling loop
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => cancelAnimationFrame(startScrolling); // Clean up when unmounted
   }, []);
 
   return (
     <div className="w-full overflow-hidden">
       <div
         ref={scrollContainerRef}
-        className="flex gap-10 items-center w-full h-[500px] overflow-x-scroll scroll-smooth shadow-2xl shadow-black"
+        className="flex gap-10 items-center w-full h-[500px] overflow-x-scroll scroll-smooth"
         style={{
           whiteSpace: "nowrap",
           scrollbarWidth: "none", // Firefox
@@ -48,7 +55,8 @@ const SkillsCarouselReverse = () => {
             }
           `}
         </style>
-        {projects.concat(projects).map((project, index) => (
+
+        {projects.map((project, index) => (
           <div
             key={index}
             className="relative w-[500px] h-[500px] bg-slate-900 bg-opacity-20 rounded-lg flex-shrink-0"

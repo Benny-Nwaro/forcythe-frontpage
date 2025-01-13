@@ -13,7 +13,7 @@ function SkillsCarouselReverse() {
       ];
   return (
       <div>
-        <Marquee direction="right" speed={100} delay={5}>
+        <Marquee direction="right" speed={50} delay={5}>
         {projects.map((project, index) => (
           <div
             key={index}

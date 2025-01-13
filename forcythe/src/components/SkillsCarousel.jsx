@@ -13,7 +13,7 @@ function SkillsCarousel() {
       ];
   return (
       <div>
-        <Marquee direction="left" speed={100} delay={5}>
+        <Marquee direction="left" speed={50} delay={5}>
         {projects.map((project, index) => (
           <div
             key={index}

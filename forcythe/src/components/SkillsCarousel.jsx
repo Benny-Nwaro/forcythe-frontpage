@@ -17,17 +17,17 @@ const SkillsCarousel = () => {
 
     const startScrolling = () => {
       if (scrollContainer) {
-        scrollContainer.scrollLeft += 1;
+        scrollContainer.scrollLeft += 5; // Faster scrolling speed
         if (
           scrollContainer.scrollLeft >=
-          scrollContainer.scrollWidth - scrollContainer.offsetWidth
+          scrollContainer.scrollWidth / 2
         ) {
-          scrollContainer.scrollLeft = 0;
+          scrollContainer.scrollLeft = 0; // Reset seamlessly
         }
       }
     };
 
-    const interval = setInterval(startScrolling, 5); // Adjust speed with this interval
+    const interval = setInterval(startScrolling, 5); // Faster interval for quicker updates
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
@@ -64,13 +64,12 @@ const SkillsCarousel = () => {
               alt={project.alt}
               loading="lazy"
               decoding="async"
-              className="w-full h-full px-8 pt-8  object-cover"
+              className="w-full h-full px-8 pt-8 object-cover"
               src={project.src}
             />
           </div>
         ))}
       </div>
-
     </div>
   );
 };

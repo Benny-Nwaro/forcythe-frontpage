@@ -47,15 +47,15 @@ const Section = () => {
         </p>
       </div>
 
-      <div className="flex flex-col mt-10 md:flex-row items-center justify-between">
+      <div className="flex flex-col mt-10  md:flex-row items-center justify-between">
         {/* Tabs Section */}
-        <div className="flex flex-col w-96 md:flex-row basis-1/2 mb-8 md:mb-0">
+        <div className="flex flex-col w-96 md:flex-row basis-1/2 max-md:pl-10 mb-8 md:mb-0">
           <div className="w-full">
-            <div className="w-full border-2 border-light-blue mb-12 rounded-full grid gap-1 grid-cols-4 p-4">
+            <div className="flex flex-row py-2 px-2 w-full border-2 border-light-blue mb-12 rounded-full ">
               {tabDetails.map((tab) => (
                 <div
                   key={tab.name}
-                  className={`overflow-hidden  md:px-2.5 md:py-3.5 rounded-full text-center text-xl py-4 px-4 font-medium cursor-pointer transition-all duration-300 w-24 ${
+                  className={`overflow-hidden max-md:py-2 max-md:text-sm max-md:px-1 max-md:text-center rounded-full text-center text-xl py-4 px-4 font-medium cursor-pointer transition-all duration-300 w-24 ${
                     activeTab === tab.name ? 'bg-light-blue text-black w-32 max-md:w-24  ' : 'bg-transparent text-white'
                   }`}
                   onClick={() => handleTabClick(tab.name)}

@@ -7,8 +7,8 @@ const Testimonials = () => {
 
   // Default brand selection when the component mounts
   useEffect(() => {
-    const brand = "Starks";
-    handleBrandSelection(brand);
+    const defaultBrand = "Starks";
+    handleBrandSelection(defaultBrand);
   }, []);
 
   // Handle brand selection
@@ -34,7 +34,7 @@ const Testimonials = () => {
         "Their designs and creativity are unmatched! The team worked collaboratively and helped us achieve a web presence that truly reflects our brand.",
       author: "Alex Smith, CEO",
       imageSrc:
-        "https://cdn-jamfh.nitrocdn.com/nAHVBUOgwDBrJMHUWmnpCOHYFNJcvlgF/assets/images/optimized/rev-f6c740b/www.stark-stark.com/wp-content/uploads/2023/08/thomas-kellerman-lawyer.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgmZC5fycFQNQ6lvPenS34eJKIEZDkF9Xg7A&s",
     },
     {
       brand: "Iwaria",
@@ -43,25 +43,25 @@ const Testimonials = () => {
         "A fantastic experience working with this team. Their attention to detail and dedication to understanding our needs resulted in outstanding outcomes.",
       author: "Jane Doe, Founder",
       imageSrc:
-        "https://cdn-jamfh.nitrocdn.com/nAHVBUOgwDBrJMHUWmnpCOHYFNJcvlgF/assets/images/optimized/rev-f6c740b/www.stark-stark.com/wp-content/uploads/2023/08/thomas-kellerman-lawyer.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4ctYbhVWz2nUvsCsyjO7X0fi_CqIZtfkHXw&s",
     },
     {
       brand: "Beaupreneur",
-      title: "Innovative Minds",
+      title: "Beaupreneur",
       description:
-        "A fantastic experience working with this team. Their attention to detail and dedication to understanding our needs resulted in outstanding outcomes.",
-      author: "Jane Doe, Founder",
+        "Our collaboration was seamless and resulted in designs that exceeded our expectations. The team’s approach made a significant difference in our brand's online presence.",
+      author: "Emily Johnson, Founder",
       imageSrc:
-        "https://cdn-jamfh.nitrocdn.com/nAHVBUOgwDBrJMHUWmnpCOHYFNJcvlgF/assets/images/optimized/rev-f6c740b/www.stark-stark.com/wp-content/uploads/2023/08/thomas-kellerman-lawyer.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOcjjbyT7RgZGo5hz2auM8JSZGlxhKXMxHpQ&s",
     },
     {
       brand: "StacAI",
-      title: "Innovative Minds",
+      title: "StacAI",
       description:
-        "A fantastic experience working with this team. Their attention to detail and dedication to understanding our needs resulted in outstanding outcomes.",
-      author: "Jane Doe, Founder",
+        "Their solutions are innovative and cutting-edge. Working with them was a breeze, and they delivered everything on time with outstanding quality.",
+      author: "Michael Carter, CTO",
       imageSrc:
-        "https://cdn-jamfh.nitrocdn.com/nAHVBUOgwDBrJMHUWmnpCOHYFNJcvlgF/assets/images/optimized/rev-f6c740b/www.stark-stark.com/wp-content/uploads/2023/08/thomas-kellerman-lawyer.jpg",
+        "https://imageio.forbes.com/specials-images/imageserve/6312063960005b4ab0213eba/Allow-us-to-lead-your-business-to-greatness/960x0.jpg?height=509&width=711&fit=bounds",
     },
   ];
 
@@ -102,54 +102,21 @@ const Testimonials = () => {
 
   return (
     <div className="flex flex-col">
-        <p className="text-[2rem] leading-[2.5rem] sm:text-[2.2rem] text-white sm:leading-[2.5rem] lg:text-[3rem] lg:leading-[3.5rem] mb-12 max-w-4xl mx-auto text-center">
-          <div>
-            <span className="opacity-0" style={{ opacity: 1 }}>
-              Discover{" "}
-            </span>
-            <span className="opacity-0" style={{ opacity: 1 }}>
-              the{" "}
-            </span>
-            <span
-              className="opacity-0 text-[#60a6e7]"
-              style={{ opacity: 1 }}
-            >
-              transformative{" "}
-            </span>
-            <span
-              className="opacity-0 text-[#60a6e7]"
-              style={{ opacity: 1 }}
-            >
-              stories{" "}
-            </span>
-            <span className="opacity-0" style={{ opacity: 1 }}>
-              of{" "}
-            </span>
-            <span className="opacity-0" style={{ opacity: 1 }}>
-              startups{" "}
-            </span>
-            <span className="opacity-0" style={{ opacity: 1 }}>
-              that{" "}
-            </span>
-            <span className="opacity-0" style={{ opacity: 1 }}>
-              scaled{" "}
-            </span>
-            <span className="opacity-0" style={{ opacity: 1 }}>
-              new{" "}
-            </span>
-            <span className="opacity-0" style={{ opacity: 1 }}>
-              heights{" "}
-            </span>
-            <span className="opacity-0" style={{ opacity: 1 }}>
-              with{" "}
-            </span>
-            <span className="opacity-0" style={{ opacity: 1 }}>
-              us{" "}
-            </span>
-          </div>
-        </p>
+      {/* Header */}
+      <p className="text-[2rem] leading-[2.5rem] sm:text-[2.2rem] text-white sm:leading-[2.5rem] lg:text-[3rem] lg:leading-[3.5rem] mb-12 max-w-4xl mx-auto text-center">
+        <span className="opacity-0" style={{ opacity: 1 }}>
+          Discover{" "}
+        </span>
+        <span className="opacity-0 text-[#60a6e7]" style={{ opacity: 1 }}>
+          transformative stories
+        </span>{" "}
+        <span className="opacity-0" style={{ opacity: 1 }}>
+          of startups that scaled new heights with us.
+        </span>
+      </p>
+
       {/* Brands Component */}
-      <div>
+      <div className="relative">
         <Brands
           brandsData={brandsList}
           onBrandClick={handleBrandSelection}
@@ -157,13 +124,12 @@ const Testimonials = () => {
         />
       </div>
 
-      {/* Display selected testimonial card below the selected brand */}
-      <div className="flex flex-col items-center gap-10 mt-5">
+      {/* Testimonial Card */}
+      <div className="relative w-full">
         {brandsList.map((brand, index) => (
-          <div key={index} className="w-full">
-            {/* If the current brand is selected, display the corresponding testimonial */}
+          <div key={index} className="relative">
             {selectedBrand === brand.name && (
-              <div className="mt-2 w-full max-md:px-4">
+              <div className="absolute top-[120%] left-1/2 transform -translate-x-1/2 w-full h-full max-md:px-4 z-10">
                 <TestimonialCard
                   testimonial={
                     testimonials.find((test) => test.brand === brand.name) || {}

@@ -42,7 +42,7 @@ function BookingCard() {
   return (
     <div className="w-full lg:h-[500px] bg-white lg:mx-32 max-md:mx-4 bg-opacity-10 p-10 rounded-[4rem] max-md:rounded-[2rem]">
       <div className="min-h-[180px]">
-        <h1 className="sm:text-[4rem] text-white lg:text-8xl font-medium leading-[1] mb-7">
+        <h1 className="max-md:text-[4rem] text-white lg:text-8xl font-medium leading-[1] mb-7">
           {headingText.split("products").map((part, index) => (
             <React.Fragment key={index}>
               {part}
@@ -54,7 +54,7 @@ function BookingCard() {
         </h1>
       </div>
       <div className="mb-8 max-w-3xl">
-        <p className="text-white text-base md:text-lg mb-8 leading-7">
+        <p className="text-3xl max-md:text-xl text-gray-300 mb-8 leading-7">
           {paragraphText}
         </p>
       </div>

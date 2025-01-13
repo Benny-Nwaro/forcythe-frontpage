@@ -17,7 +17,7 @@ function HomePage() {
     <div >
         <Navbar/>
         <HeroSection/>
-          <div className="flex space-x-2  max-md:mx-4 justify-center lg:-mt-24 max-md:my-10 flex-wrap ">
+          <div className="flex space-x-2  max-md:mx-4 justify-center lg:-mt-16 max-md:my-10 flex-wrap ">
               <span className='text-white capitalize text-7xl max-md:text-4xl'>in </span>
               <span className='text-white capitalize text-7xl max-md:text-4xl'>Success </span>
               <span className="text-[#60a6e7] capitalize text-7xl max-md:text-4xl">Motion </span>
@@ -29,13 +29,13 @@ function HomePage() {
         <div className='shadow-2xl shadow-gray-700 mb-10 '>
           <SkillsCarousel/>
         </div>
-        {/* <div className='shadow-2xl shadow-gray-700 mb-10 '>
+        <div className='shadow-2xl shadow-gray-700 z-50 mt-20'>
           <SkillsCarouselReverse/>
-        </div> */}
-        <div className='mt-20'>
+        </div>
+        <div className='mt-20 max-md:pb-64'>
         <Testimonials/>
         </div>
-        <div className=''>
+        <div className='mt-96'>
         <Section/>
         </div>
         <div className='mt-20'>

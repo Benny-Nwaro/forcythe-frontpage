@@ -17,7 +17,7 @@ function HomePage() {
     <div >
         <Navbar/>
         <HeroSection/>
-          <div className="flex space-x-2 mt-20 max-md:mt-20 max-md:mx-4 justify-center lg:-mt-24 max-md:my-10 flex-wrap ">
+          <div className="flex space-x-2 mt-20 max-md:mt-20 max-md:mx-4 justify-center lg:mt-24 max-md:my-10 flex-wrap ">
               <SuccessMotionText/>
         </div>
         <div className=' flex flex-col space-y-10  '>

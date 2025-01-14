@@ -15,9 +15,9 @@ const AnimatedText = () => {
     <div className="w-full bg-white bg-opacity-15 p-5 py-8 md:p-8 lg:p-10 my-10 rounded-[2rem] sm:rounded-[3rem]">
       <div className=" mx-auto">
         <div className="min-h-[180px]">
-          <h1 className=" animate-typing text-[3.5rem] text-white sm:text-[4rem] lg:text-[5rem] font-normal leading-[1] mb-7">
-            We build <span className="text-blue-800 animate-typing">products</span> that shape a better future
-          </h1>
+            <h1 className="text-[3.5rem] text-white sm:text-[4rem] lg:text-[5rem] font-normal leading-[1] mb-7">
+                We build <span className="text-blue-800 typewriter">products</span> that shape a better future
+            </h1>
         </div>
         <div className="mb-8 max-w-3xl">
           <div className="">

@@ -26,7 +26,7 @@ function AnimatedHeader(props) {
       }, []);
 
   return (
-    <h1 className="text-[3.5rem] text-white sm:text-[3rem] lg:text-[4rem] font-normal leading-[1] mb-7">
+    <h1 className="text-[3.5rem] text-white sm:text-[3rem] lg:text-[4rem] font-normal leading-[1] mb-7 text-center max-md:text-2xl">
     {headingText.split("Motion").map((part, index) => (
       <React.Fragment key={index}>
         {part}

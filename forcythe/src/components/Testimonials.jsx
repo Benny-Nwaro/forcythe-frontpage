@@ -15,6 +15,14 @@ const Testimonials = () => {
   const handleBrandSelection = (brandName) => {
     setSelectedBrand(brandName);
   };
+    useEffect(() => {
+      const spans = document.querySelectorAll('.animated-text span');
+      spans.forEach((span, index) => {
+        setTimeout(() => {
+          span.classList.add('opacity-100');
+        }, index * 100); // Delay each span appearance
+      });
+    }, []);
 
   // Dummy data for testimonials
   const testimonials = [
@@ -103,17 +111,20 @@ const Testimonials = () => {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <p className="text-[2rem] leading-[2.5rem] sm:text-[2.2rem] text-white sm:leading-[2.5rem] lg:text-[3rem] lg:leading-[3.5rem] mb-12 max-w-4xl mx-auto text-center">
-        <span className="opacity-0" style={{ opacity: 1 }}>
-          Discover{" "}
-        </span>
-        <span className="opacity-0 text-[#60a6e7]" style={{ opacity: 1 }}>
-          transformative stories
-        </span>{" "}
-        <span className="opacity-0" style={{ opacity: 1 }}>
-          of startups that scaled new heights with us.
-        </span>
-      </p>
+      <div className="mb-8 max-md:mb-2 max-md:mt-10 max-md:w-5/6 text-center w-2/3 mx-auto">
+          <div className="">
+            <p className="text-white text-base md:text-6xl max-md:text-3xl max-md:font-semibold mb-8 leading-7">
+              <div className="animated-text">
+                <span className="opacity-0 transition-opacity duration-500"> Discover{" "}the
+                </span>
+                <span className="opacity-0 transition-opacity duration-500 text-[#60a6e7]"> transformative stories
+                </span>
+                <span className="opacity-0 transition-opacity duration-500"> of startups that scaled new heights with us.
+                </span>
+              </div>
+            </p>
+          </div>
+        </div>
 
       {/* Brands Component */}
       <div className="relative">
@@ -125,7 +136,7 @@ const Testimonials = () => {
       </div>
 
       {/* Testimonial Card */}
-      <div className="relative w-full">
+      <div className="relative w-full lg:mx-32  lg:mb-40">
         {brandsList.map((brand, index) => (
           <div key={index} className="relative">
             {selectedBrand === brand.name && (

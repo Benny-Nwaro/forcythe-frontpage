@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Brands = ({ brandsData, onBrandClick, className }) => {
-  const [activeBrand, setActiveBrand] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleBrandClick = (brandName) => {
-    setActiveBrand(brandName);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % brandsData.length); // Cycle through all tabs
+    }, 5000); // Change every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [brandsData.length]);
+
+  useEffect(() => {
+    if (onBrandClick) {
+      onBrandClick(brandsData[activeIndex]?.name);
+    }
+  }, [activeIndex, brandsData, onBrandClick]);
+
+  const handleBrandClick = (brandName, index) => {
+    setActiveIndex(index); // Manually set the active tab
     if (onBrandClick) {
       onBrandClick(brandName);
     }
@@ -16,10 +30,10 @@ const Brands = ({ brandsData, onBrandClick, className }) => {
         {brandsData?.map((brand, index) => (
           <button
             key={index}
-            onClick={() => handleBrandClick(brand.name)}
+            onClick={() => handleBrandClick(brand.name, index)}
             className={`w-full p-2 cursor-pointer transition-all duration-300 ${
               brand.extraClasses
-            } ${activeBrand === brand.name ? " bg-customBlue rounded-full text-white" : ""}`}
+            } ${activeIndex === index ? " bg-customBlue rounded-full text-white" : ""}`}
           >
             <div className="w-fit h-14 mx-auto gap-1.5 text-white text-[17px] font-medium min-w-fit flex items-center justify-center">
               <img
@@ -34,7 +48,7 @@ const Brands = ({ brandsData, onBrandClick, className }) => {
                   brand.name === "Iwaria" ? `w-30 h-14 text-white rounded-full` : ""
                 }  ${
                   brand.name === "Beaupreneur" ? `w-44 h-14 text-white rounded-full` : ""
-                }` }
+                }`}
                 src={brand.imgSrc}
               />
               {brand.name === "Starks" && <span>{brand.name}</span>}

@@ -1,6 +1,7 @@
 import React from "react";
 import worldImage from "../assets/images/worldImage.png";
 import BookingCard from "./BookingCard";
+import AnimatedText from "./AnimatedText";
 
 const HeroSection = () => {
   return (
@@ -12,7 +13,10 @@ const HeroSection = () => {
         backgroundPosition: "center",
       }}
     >
-      <BookingCard/>
+      {/* <BookingCard/> */}
+      <div className="mx-32 max-md:mx-4"> 
+      <AnimatedText/>
+      </div>
      
     </div>
   );

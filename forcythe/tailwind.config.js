@@ -8,12 +8,17 @@ export default {
     extend: {
       animation: {
         "spin-slow": "spin 8s linear infinite", // Slows down spinning
-        "typing": "typing 2s steps(20) alternate, blink .7s "
+        "typing": "typing 2s steps(20) alternate, blink .7s ",
+        'fade-in': 'fadeIn 1s ease-in forwards',
       },
       keyframes: {
         "spin-gradient": {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
+          fadeIn: {
+            '0%': { opacity: '0', transform: 'translateY(10px)' },
+            '100%': { opacity: '1', transform: 'translateY(0)' },
+          },
         },
         typing: {
           "0%": {

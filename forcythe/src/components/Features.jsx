@@ -58,7 +58,7 @@ const Features = () => {
         {features.map((feature, index) => (
           <div
             key={index}
-            className="card relative  w-full max-md:mb-10 flex flex-col items-center rounded-2xl transition-transform duration-500 hover:scale-105"
+            className="card relative max-md:mx-auto  w-full max-md:mb-10 flex flex-col items-center rounded-2xl transition-transform duration-500 hover:scale-105"
             style={{ animationDelay: `${index * 0.2}s` }}
           >
             <div className="relative z-10 bg-black w-full h-full hover:border-2 hover:border-blue-500 max-md:p-5 sm:p-10 rounded-2xl hover:shadow-lg">

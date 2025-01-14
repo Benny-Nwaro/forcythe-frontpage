@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BookingButton from "./BookingButton";
+import TypewritingHeader from "./TypewritingHeader";
 
 function BookingCard() {
   const [headingText, setHeadingText] = useState("");
@@ -42,7 +43,7 @@ function BookingCard() {
   return (
     <div className="flex flex-col w-full lg:h-[500px] bg-white lg:mx-32 max-md:mx-4 max-sm:mx-2 bg-opacity-10 p-10 rounded-[4rem] max-md:rounded-[2rem]">
       <div className="min-h-[180px]">
-        <h1 className="max-md:text-[2rem] text-white lg:text-6xl font-medium leading-[1] mb-7">
+        {/* <h1 className="max-md:text-[2rem] text-white lg:text-6xl font-medium leading-[1] mb-7">
           {headingText.split("products").map((part, index) => (
             <div className="animate-typing" key={index}>
               {part}
@@ -51,7 +52,9 @@ function BookingCard() {
               )}
             </div>
           ))}
-        </h1>
+        </h1> */}
+                <TypewritingHeader text={fullHeadingText}/>
+
       </div>
       <div className="mb-8 max-w-3xl">
         <p className="text-xl max-md:text-lg text-gray-300 mb-8 leading-7">

@@ -38,8 +38,8 @@ const Section = () => {
   const activeTabDetails = tabDetails.find((tab) => tab.name === activeTab);
 
   return (
-    <div className="py-20 lg:mx-32 max-md:px-4">
-      <div className="mb-12 max-w-[50rem]">
+    <div className="py-20 mx-32 max-md:mx-4 ">
+      <div className="mb-12 max-w-[50rem]  max-md:text-center">
         <p className="text-[2rem] leading-[32px] sm:text-[2.2rem] text-white sm:leading-[2.5rem] lg:text-[3rem] lg:leading-[3rem]">
           From{' '}
           <span className="text-[#60a6e7] capitalize">Spark</span> to{' '}
@@ -47,11 +47,11 @@ const Section = () => {
         </p>
       </div>
 
-      <div className="flex flex-col mt-10  md:flex-row items-center justify-between">
+      <div className="flex flex-col mt-10 max-md:mx-4  md:flex-row items-center justify-between">
         {/* Tabs Section */}
-        <div className="flex flex-col w-96 md:flex-row basis-1/2 max-md:pl-10 mb-8 md:mb-0">
-          <div className="w-full">
-            <div className="flex flex-row justify-between py-2 px-2 w-full border-2 border-light-blue mb-12 rounded-full ">
+        <div className="flex flex-col w-96 md:flex-row basis-1/2 max-md:mx-4  mb-8 md:mb-0">
+          <div className="w-full max-md:px-4 ">
+            <div className="flex flex-row justify-between max-md:w-full max-md:px-4 py-2 px-2 w-full border-2 border-light-blue mb-12 rounded-full ">
               {tabDetails.map((tab) => (
                 <div
                   key={tab.name}

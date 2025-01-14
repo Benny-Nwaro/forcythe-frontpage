@@ -1,6 +1,6 @@
 import React from "react";
 import worldImage from "../assets/images/worldImage.png";
-import BookingCard from "./BookingCard";
+// import BookingCard from "./BookingCard";
 import AnimatedText from "./AnimatedText";
 
 const HeroSection = () => {

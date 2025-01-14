@@ -10,8 +10,6 @@ import Testimonials from '../components/Testimonials'
 import Section from '../components/Section'
 import Statistics from '../components/Statistics'
 import ReadyToScale from '../components/ReadyToScale'
-import AnimatedText from '../components/AnimatedText'
-import TypewritingHeader from '../components/TypewritingHeader'
 
 function HomePage() {
   return (
@@ -49,7 +47,6 @@ function HomePage() {
         <div className='mt-20'>
         <ReadyToScale/>
         </div>
-        {/* <TypewritingHeader text="The quick brown fox jumped over the lazy dog"/> */}
         <FooterSection/>
     </div>
   )

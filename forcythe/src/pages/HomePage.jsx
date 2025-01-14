@@ -10,6 +10,7 @@ import Testimonials from '../components/Testimonials'
 import Section from '../components/Section'
 import Statistics from '../components/Statistics'
 import ReadyToScale from '../components/ReadyToScale'
+import SuccessMotionText from '../components/SuccessMotionText'
 
 function HomePage() {
   return (
@@ -17,13 +18,14 @@ function HomePage() {
         <Navbar/>
         <HeroSection/>
           <div className="flex space-x-2 mt-20 max-md:mt-20 max-md:mx-4 justify-center lg:-mt-16 max-md:my-10 flex-wrap ">
-              <span className='text-white capitalize text-7xl max-md:text-4xl'>in </span>
+              {/* <span className='text-white capitalize text-7xl max-md:text-4xl'>in </span>
               <span className='text-white capitalize text-7xl max-md:text-4xl'>Success </span>
               <span className="text-[#60a6e7] capitalize text-7xl max-md:text-4xl">Motion </span>
               <span className='text-white capitalize text-7xl max-md:text-4xl'>– </span>
               <span className='text-white capitalize text-7xl max-md:text-4xl'>Our </span>
               <span className='text-white capitalize text-7xl max-md:text-4xl'>clients’ </span>
-              <span className='text-white capitalize text-7xl max-md:text-4xl'>journey </span>
+              <span className='text-white capitalize text-7xl max-md:text-4xl'>journey </span> */}
+              <SuccessMotionText/>
         </div>
         <div className=' flex flex-col space-y-10  '>
           <SkillsCarousel/>

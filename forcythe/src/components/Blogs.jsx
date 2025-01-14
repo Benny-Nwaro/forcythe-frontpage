@@ -64,9 +64,9 @@ const Blogs = () => {
           {headingText.split("products").map((part, index) => (
             <React.Fragment key={index}>
               {part}
-              {index === 0 && headingText.includes("products") && (
+              {/* {index === 0 && headingText.includes("products") && (
                 <span className="text-accent text-blue-500">products</span>
-              )}
+              )} */}
             </React.Fragment>
           ))}
         </h1>

@@ -16,7 +16,7 @@ function FooterSection() {
               placeholder="Your Email Address"
               type="text"
             />
-            <button className="py-3 h-full bg-white text-black hover:bg-[#064386] hover:text-white custom-animate  rounded-e-full text-lg font-semibold border border-l-0 max-md:text-sm border-white">
+            <button className="py-3 h-full bg-white text-black hover:bg-[#064386] hover:text-white custom-animate  rounded-e-full text-base font-semibold border border-l-0 max-md:text-sm border-white">
               Subscribe
             </button>
           </div>

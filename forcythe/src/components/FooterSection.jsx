@@ -53,7 +53,7 @@ function FooterSection() {
               dedicated to transforming businesses with bespoke digital
               solutions that drive growth.
             </p>
-            <div className="mt-10 lg:flex-row max-md:flex items-center gap-2 max-md:mx-auto">
+            <div className="mt-10 flex flex-row justify-between max-md:flex items-center gap-2 max-md:mx-auto">
               {/* Social Icons */}
               <a
                 target="_blank"

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { LuFacebook } from "react-icons/lu";
 import { FaInstagram, FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 import { LuYoutube } from "react-icons/lu";
 import logo from "../assets/images/logo.png";
 
 function FooterSection() {
+  const [inputText, setInputText] = useState("")
+
   return (
     <div className="section-padding py-10 lg:mx-32 max-md:mx-5 bg-secondaryBackground">
       <div className="lg:grid lg:grid-cols-3 my-10">
@@ -12,10 +14,11 @@ function FooterSection() {
         <div className="max-w-lg mb-10 lg:mb-0">
           <div className="w-full grid grid-cols-4 mb-5">
             <input
-              className="py-4 col-span-3 bg-transparent outline-none border border-white rounded-s-full px-4 text-lg placeholder:text-gray-500 max-md:py-2 max-md:text-sm"
-              placeholder="Your Email Address"
-              type="text"
-            />
+            className="py-4 col-span-3 bg-transparent outline-none border text-white border-white rounded-s-full px-4 text-lg placeholder:text-gray-500 max-md:py-2 max-md:text-sm"
+            type="email"
+            placeholder="Your Email Address"
+            onChange={(e) => setInputText(e.target.value)}
+          />
             <button className="py-3 h-full bg-white text-black hover:bg-[#064386] hover:text-white custom-animate  rounded-e-full text-base font-semibold border border-l-0 max-md:text-sm border-white">
               Subscribe
             </button>
@@ -23,9 +26,8 @@ function FooterSection() {
           <div className="flex gap-3  pt-5 text-white items-center">
             <div className="w-5 h-5 border-2 rounded-full bg-transparent border-white cursor-pointer flex items-center justify-center">
               <input
-                className="hidden"
-                id="agreement"
                 type="checkbox"
+                id="agreement"
                 name="agreement"
               />
             </div>

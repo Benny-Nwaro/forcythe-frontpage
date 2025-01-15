@@ -136,7 +136,7 @@ const Testimonials = () => {
       </div>
 
       {/* Testimonial Card */}
-      <div className="relative w-full lg:mx-32  lg:mb-40">
+      <div className=" lg:mx-32  lg:mb-40">
         {brandsList.map((brand, index) => (
           <div key={index} className="relative">
             {selectedBrand === brand.name && (
